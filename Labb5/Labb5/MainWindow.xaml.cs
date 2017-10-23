@@ -24,5 +24,19 @@ namespace Labb5
         {
             InitializeComponent();
         }
+
+        private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
+        {
+            User user = new User();
+            user.Namn = TextBoxNamn.Text;
+            user.Epost = TextBoxEpost.Text;
+
+            normalUsersListbox.Items.Add(user.Namn);
+
+
+            //TextBox TextBoxItem = new TextBox();
+            //normalUsersListbox.Items.Add(TextBoxNamn.Text);
+        }
+    
     }
 }
