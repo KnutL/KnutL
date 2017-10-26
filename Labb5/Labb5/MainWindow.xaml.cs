@@ -30,13 +30,27 @@ namespace Labb5
             User user = new User();
             user.Namn = TextBoxNamn.Text;
             user.Epost = TextBoxEpost.Text;
-
+            
+            
             normalUsersListbox.Items.Add(user.Namn);
 
 
             //TextBox TextBoxItem = new TextBox();
             //normalUsersListbox.Items.Add(TextBoxNamn.Text);
         }
-    
+
+        private void buttonTaBort_Click(object sender, RoutedEventArgs e)
+        {
+            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
+        }
+
+        private void ButtonÄndra_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonÄndra.IsEnabled = false;
+            if (normalUsersListbox.IsFocused)
+            {
+                ButtonÄndra.IsEnabled = true;
+            }
+        }
     }
 }
