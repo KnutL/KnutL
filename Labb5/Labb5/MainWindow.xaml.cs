@@ -38,12 +38,6 @@ namespace Labb5
             //TextBox TextBoxItem = new TextBox();
             //normalUsersListbox.Items.Add(TextBoxNamn.Text);
         }
-
-        private void buttonTaBort_Click(object sender, RoutedEventArgs e)
-        {
-            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
-        }
-
         private void ButtonÄndra_Click(object sender, RoutedEventArgs e)
         {
             ButtonÄndra.IsEnabled = false;
@@ -51,6 +45,11 @@ namespace Labb5
             {
                 ButtonÄndra.IsEnabled = true;
             }
+        }
+
+        private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
+        {
+            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
         }
     }
 }
