@@ -7,12 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBox x:Name="TextBoxNamn" HorizontalAlignment="Left" Height="23" Margin="194,22,0,0" TextWrapping="Wrap" Text="Namn" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBoxEpost" HorizontalAlignment="Left" Height="23" Margin="194,59,0,0" TextWrapping="Wrap" Text="E-postadress" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxNamn" HorizontalAlignment="Left" Height="23" Margin="194,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxEpost" HorizontalAlignment="Left" Height="23" Margin="194,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="ButtonSkapa" Content="Skapa" HorizontalAlignment="Left" Margin="217,99,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSkapa_Click"/>
         <ListBox x:Name="normalUsersListbox" HorizontalAlignment="Left" Height="100" Margin="27,182,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="ButtonÄndra" Content="Ändra" HorizontalAlignment="Left" Margin="39,144,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="ButtonÄndra_Click"/>
-        <Button x:Name="buttonTaBort" Content="Ta bort" HorizontalAlignment="Left" Margin="39,118,0,0" VerticalAlignment="Top" Width="75" Click="buttonTaBort_Click"/>
+        <Button x:Name="ButtonÄndra" Content="Ändra" HorizontalAlignment="Left" Margin="39,144,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
 
     </Grid>
 </Window>
