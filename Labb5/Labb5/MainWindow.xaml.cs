@@ -24,35 +24,19 @@ namespace Labb5
         {
             InitializeComponent();
         }
-        User user = new User();
 
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
+            /*
             user.Namn = TextBoxNamn.Text;
             user.Epost = TextBoxEpost.Text;
+            */
             
-            
-            normalUsersListbox.Items.Add(user.Namn);
+            normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
 
 
             //TextBox TextBoxItem = new TextBox();
             //normalUsersListbox.Items.Add(TextBoxNamn.Text);
-        }
-        private void ButtonÄndra_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            if (normalUsersListbox.Items.Contains(normalUsersListbox.Items))
-            {
-                ButtonÄndra.IsEnabled = true;
-            }
-
-            
-            ButtonÄndra.IsEnabled = false;
-            if (normalUsersListbox.IsFocused)
-            {
-                ButtonÄndra.IsEnabled = true;
-            }
-            */
         }
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
@@ -64,8 +48,20 @@ namespace Labb5
 
         private void normalUsersListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ButtonÄndra.IsEnabled = true;
+            ButtonChangeToAdmin.IsEnabled = true;
             buttonTaBort.IsEnabled = true;
+        }
+
+        private void ButtonChangeToAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            //AdminListBox.Items.Add(user.Namn);
+            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
+        }
+
+        private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
+        {
+            //normalUsersListbox.Items.Add(user.Namn);
+            AdminListBox.Items.Remove(AdminListBox.SelectedItem);
         }
     }
 }
