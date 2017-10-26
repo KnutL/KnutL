@@ -24,10 +24,10 @@ namespace Labb5
         {
             InitializeComponent();
         }
+        User user = new User();
 
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User();
             user.Namn = TextBoxNamn.Text;
             user.Epost = TextBoxEpost.Text;
             
