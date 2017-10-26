@@ -24,14 +24,13 @@ namespace Labb5
         {
             InitializeComponent();
         }
-
+        User user = new User();
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User();
             user.Namn = TextBoxNamn.Text;
             user.Epost = TextBoxEpost.Text;
-            
-            
+
+
             normalUsersListbox.Items.Add(user.Namn);
 
 
@@ -57,15 +56,33 @@ namespace Labb5
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
         {
-            
+
             normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
-            
+
         }
 
         private void normalUsersListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ButtonÄndra.IsEnabled = true;
             buttonTaBort.IsEnabled = true;
+            if (normalUsersListbox.Items.Count == 0)
+            {
+                ButtonÄndra.IsEnabled = false;
+                buttonTaBort.IsEnabled = false;
+            }
+
+
+        }
+        
+        private void normalUsersListbox_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            
+        }
+
+        private void buttonInfo_Click(object sender, RoutedEventArgs e)
+        {
+
+            labelUserInfo.Content = $"Namn: {user.Namn} \vEpost: {user.Epost}";
         }
     }
 }
