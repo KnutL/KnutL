@@ -67,7 +67,7 @@ namespace Labb5
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
 
-            labelUserInfo.Content = $"Namn:{((User)normalUsersListbox.SelectedItem).Namn} \vEpost: ";
+            labelUserInfo.Content = $"Namn:{normalUsersListbox.SelectedItem} \vEpost: ";
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
