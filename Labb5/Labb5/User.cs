@@ -11,6 +11,11 @@ namespace Labb5
         public string Namn { get; set; }
         public string Epost { get; set; }
 
+        public override string ToString()
+        {
+            return Namn;
+        }
+
         public User(string Name, string Email)
         {
             Name = Namn;

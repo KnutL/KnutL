@@ -24,7 +24,6 @@ namespace Labb5
         {
             InitializeComponent();
         }
-
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -41,27 +40,14 @@ namespace Labb5
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
         {
-            
+
             normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
-            
+
         }
 
         private void normalUsersListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ButtonChangeToAdmin.IsEnabled = true;
-            buttonTaBort.IsEnabled = true;
-        }
-
-        private void ButtonChangeToAdmin_Click(object sender, RoutedEventArgs e)
-        {
-
-            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
-
-        }
-
-        private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonÄndra.IsEnabled = true;
             buttonTaBort.IsEnabled = true;
             if (normalUsersListbox.Items.Count == 0)
             {
@@ -81,6 +67,18 @@ namespace Labb5
         {
 
             labelUserInfo.Content = $"Namn: {user.Namn} \vEpost: {user.Epost}";
+        }
+
+        private void ButtonChangeToAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            //AdminListBox.Items.Add(user.Namn);
+            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
+        }
+
+        private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
+        {
+            //normalUsersListbox.Items.Add(user.Namn);
+            AdminListBox.Items.Remove(AdminListBox.SelectedItem);
         }
     }
 }
