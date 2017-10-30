@@ -32,9 +32,9 @@ namespace Labb5
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
         {
-            
+
             normalUsersListbox.SelectedItems.Remove(normalUsersListbox.SelectedItem);
-            
+
         }
 
         private void normalUsersListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -57,22 +57,30 @@ namespace Labb5
                 AdminListBox.Items.Remove(AdminListBox.SelectedItem);
             }
         }
-        
+
         private void normalUsersListbox_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            
+
         }
 
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
-
-            labelUserInfo.Content = $"Namn: {((User)normalUsersListbox.SelectedItem).Namn} \vEpost: {((User)normalUsersListbox.SelectedItem).Epost} ";
+            if (normalUsersListbox.HasItems)
+            {
+                buttonInfo.IsEnabled = true;
+                labelUserInfo.Content = $"Namn: {((User)normalUsersListbox.SelectedItem).Namn} \vEpost: {((User)normalUsersListbox.SelectedItem).Epost}";
+            }
+            else if (AdminListBox.HasItems)
+            {
+                buttonInfo.IsEnabled = true;
+                labelUserInfo.Content = $"Namn: {((User)AdminListBox.SelectedItem).Namn} \vEpost: ";
+            }
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
         {
             AdminListBox.Items.Add(normalUsersListbox.SelectedItem);
-            //normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
+            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
         }
 
         private void AdminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
