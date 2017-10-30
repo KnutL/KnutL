@@ -32,9 +32,9 @@ namespace Labb5
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
         {
-            if (normalUsersListbox.SelectedIndex >= 1)
+            if (normalUsersListbox.SelectedIndex >= 0)
                 normalUsersListbox.Items.Remove(normalUsersListbox.Items[normalUsersListbox.SelectedIndex]);
-            else if (AdminListBox.SelectedIndex >= 1)
+            else if (AdminListBox.SelectedIndex >= 0)
                 AdminListBox.Items.Remove(AdminListBox.Items[AdminListBox.SelectedIndex]);
         }
 
