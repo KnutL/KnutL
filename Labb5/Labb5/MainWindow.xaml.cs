@@ -27,7 +27,7 @@ namespace Labb5
 
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
-            normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
+            normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text).ToString());
         }
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
@@ -72,7 +72,7 @@ namespace Labb5
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
         {
-            AdminListBox.Items.Add((User)normalUsersListbox.SelectedItem);
+            AdminListBox.Items.Add(normalUsersListbox.SelectedItem);
             normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
         }
 

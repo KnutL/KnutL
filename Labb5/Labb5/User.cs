@@ -8,13 +8,17 @@ namespace Labb5
 {
     class User
     {
-        public string Namn { get; set; }
-        public string Epost { get; set; }
-        
+        public string Namn { set; get; }
+        public string Epost { set; get; }
+
+        public override string ToString()
+        {
+            return Namn;
+        }
         public User(string Namn, string Epost)
         {
-            Namn = this.Namn;
-            Epost = this.Epost;
+            this.Namn = Namn;
+            this.Epost = Epost;
         }
     }
 }
