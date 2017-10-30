@@ -28,6 +28,8 @@ namespace Labb5
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
             normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
+            TextBoxNamn.Clear();
+            TextBoxEpost.Clear();
         }
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
@@ -81,6 +83,24 @@ namespace Labb5
         private void AdminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void ChangeUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (normalUsersListbox.SelectedIndex >= 0)
+            {
+                normalUsersListbox.Items.Remove(normalUsersListbox.Items[normalUsersListbox.SelectedIndex]);
+                normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
+                TextBoxNamn.Clear();
+                TextBoxEpost.Clear();
+            }
+            else if (AdminListBox.SelectedIndex >= 0)
+            {
+                AdminListBox.Items.Remove(AdminListBox.Items[AdminListBox.SelectedIndex]);
+                AdminListBox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
+                TextBoxNamn.Clear();
+                TextBoxEpost.Clear();
+            }
         }
     }
 }
