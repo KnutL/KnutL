@@ -13,7 +13,7 @@ namespace Labb5
 
         public override string ToString()
         {
-            return Namn;
+            return Namn + Epost;
         }
         public User(string Namn, string Epost)
         {
