@@ -10,24 +10,15 @@
         <TextBox x:Name="TextBoxNamn" HorizontalAlignment="Left" Height="23" Margin="194,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Ange ditt namn"/>
         <TextBox x:Name="TextBoxEpost" HorizontalAlignment="Left" Height="23" Margin="194,59,0,0" VerticalAlignment="Top" Width="120" ToolTip="Ange din e-postaddress"/>
         <Button x:Name="ButtonSkapa" Content="Skapa" HorizontalAlignment="Left" Margin="217,99,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSkapa_Click"/>
-<<<<<<< HEAD
         <ListBox x:Name="normalUsersListbox" HorizontalAlignment="Left" Height="100" Margin="27,182,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="normalUsersListbox_SelectionChanged" FocusableChanged="normalUsersListbox_FocusableChanged"/>
-        <Button x:Name="ButtonÄndra" Content="Ändra" HorizontalAlignment="Left" Margin="39,144,0,0" VerticalAlignment="Top" Width="75" Click="ButtonÄndra_Click" IsEnabled="False"/>
-        <ListBox x:Name="AdminListBox" HorizontalAlignment="Left" Height="100" Margin="194,182,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="AdminListBox" HorizontalAlignment="Left" Height="100" Margin="194,182,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="AdminListBox_SelectionChanged"/>
         <Label x:Name="LabelName" Content="Namn:" HorizontalAlignment="Left" Height="23" Margin="104,22,0,0" VerticalAlignment="Top" Width="85"/>
         <Label Content="E-postaddress:" HorizontalAlignment="Left" Height="29" Margin="98,59,0,0" VerticalAlignment="Top" Width="91"/>
         <Button x:Name="buttonTaBort" Content="Ta bort" HorizontalAlignment="Left" Margin="39,118,0,0" VerticalAlignment="Top" Width="75" Click="buttonTaBort_Click_1" IsEnabled="False"/>
         <Label x:Name="labelUserInfo" Content="" HorizontalAlignment="Left" Margin="361,182,0,0" VerticalAlignment="Top" Height="100" Width="134"/>
         <Button x:Name="buttonInfo" Content="Visa info" HorizontalAlignment="Left" Margin="393,144,0,0" VerticalAlignment="Top" Width="75" Click="buttonInfo_Click"/>
-=======
-        <ListBox x:Name="normalUsersListbox" HorizontalAlignment="Left" Height="100" Margin="39,162,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="normalUsersListbox_SelectionChanged"/>
-        <ListBox x:Name="AdminListBox" HorizontalAlignment="Left" Height="100" Margin="192,162,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="LabelName" Content="Namn:" HorizontalAlignment="Left" Height="23" Margin="104,22,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label Content="E-postaddress:" HorizontalAlignment="Left" Height="29" Margin="98,59,0,0" VerticalAlignment="Top" Width="91"/>
-        <Button x:Name="buttonTaBort" Content="Ta bort" HorizontalAlignment="Left" Margin="39,118,0,0" VerticalAlignment="Top" Width="75" Click="buttonTaBort_Click_1" IsEnabled="False"/>
-        <Button x:Name="ButtonChangeToUser" Content="Ändra till Användare" HorizontalAlignment="Left" Height="20" Margin="192,280,0,0" VerticalAlignment="Top" Width="122" Click="ButtonChangeToUser_Click"/>
-        <Button x:Name="ButtonChangeToAdmin" Content="Ändra Till Admin" HorizontalAlignment="Left" Height="20" Margin="39,280,0,0" VerticalAlignment="Top" Width="100" Click="ButtonChangeToAdmin_Click"/>
->>>>>>> b0ebe9fdf1cb55b47d674466f96f82bdfe2e9cb8
+        <Button x:Name="ButtonChangeToUser" Content="Ändra till Användare" HorizontalAlignment="Left" Height="20" Margin="192,289,0,0" VerticalAlignment="Top" Width="122" Click="ButtonChangeToUser_Click"/>
+        <Button x:Name="ButtonChangeToAdmin" Content="Ändra Till Admin" HorizontalAlignment="Left" Height="20" Margin="27,289,0,0" VerticalAlignment="Top" Width="100" Click="ButtonChangeToAdmin_Click_1"/>
 
     </Grid>
 </Window>

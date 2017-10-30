@@ -24,38 +24,39 @@ namespace Labb5
         {
             InitializeComponent();
         }
+
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            user.Namn = TextBoxNamn.Text;
-            user.Epost = TextBoxEpost.Text;
-            */
-            
             normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
-
-
-            //TextBox TextBoxItem = new TextBox();
-            //normalUsersListbox.Items.Add(TextBoxNamn.Text);
         }
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
         {
-
-            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
-
+            
+            normalUsersListbox.SelectedItems.Remove(normalUsersListbox.SelectedItem);
+            
         }
 
         private void normalUsersListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ButtonChangeToAdmin.IsEnabled = true;
             buttonTaBort.IsEnabled = true;
+
+        }
+
+        private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
+        {
             if (normalUsersListbox.Items.Count == 0)
             {
-                ButtonÄndra.IsEnabled = false;
+                ButtonChangeToUser.IsEnabled = false;
                 buttonTaBort.IsEnabled = false;
             }
-
-
+            else
+            {
+                ButtonChangeToUser.IsEnabled = true;
+                buttonTaBort.IsEnabled = true;
+                AdminListBox.Items.Remove(AdminListBox.SelectedItem);
+            }
         }
         
         private void normalUsersListbox_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -66,19 +67,18 @@ namespace Labb5
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
 
-            labelUserInfo.Content = $"Namn: {user.Namn} \vEpost: {user.Epost}";
+            labelUserInfo.Content = $"Namn:{((User)normalUsersListbox.SelectedItem).Namn} \vEpost: ";
         }
 
-        private void ButtonChangeToAdmin_Click(object sender, RoutedEventArgs e)
+        private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
         {
-            //AdminListBox.Items.Add(user.Namn);
+            AdminListBox.Items.Add((User)normalUsersListbox.SelectedItem);
             normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
         }
 
-        private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
+        private void AdminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //normalUsersListbox.Items.Add(user.Namn);
-            AdminListBox.Items.Remove(AdminListBox.SelectedItem);
+
         }
     }
 }

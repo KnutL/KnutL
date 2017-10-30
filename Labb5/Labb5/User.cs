@@ -10,16 +10,11 @@ namespace Labb5
     {
         public string Namn { get; set; }
         public string Epost { get; set; }
-
-        public override string ToString()
+        
+        public User(string Namn, string Epost)
         {
-            return Namn;
-        }
-
-        public User(string Name, string Email)
-        {
-            Name = Namn;
-            Email = Epost;
+            Namn = this.Namn;
+            Epost = this.Epost;
         }
     }
 }
