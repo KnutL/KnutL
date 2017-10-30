@@ -41,6 +41,7 @@ namespace Labb5
         {
             ButtonChangeToAdmin.IsEnabled = true;
             buttonTaBort.IsEnabled = true;
+            normalUsersListbox.SelectedItem.ToString();
         }
 
         private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
@@ -66,7 +67,7 @@ namespace Labb5
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
 
-            labelUserInfo.Content = $"Namn: {normalUsersListbox.SelectedItem} \vEpost: ";
+            labelUserInfo.Content = $"Namn:{normalUsersListbox.SelectedItem} \vEpost: ";
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
