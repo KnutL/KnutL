@@ -27,7 +27,7 @@ namespace Labb5
 
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
-            normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text).ToString());
+            normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
         }
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
@@ -41,7 +41,6 @@ namespace Labb5
         {
             ButtonChangeToAdmin.IsEnabled = true;
             buttonTaBort.IsEnabled = true;
-            normalUsersListbox.SelectedItem.ToString();
         }
 
         private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
@@ -67,13 +66,13 @@ namespace Labb5
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
 
-            labelUserInfo.Content = $"Namn:{normalUsersListbox.SelectedItem} \vEpost: ";
+            labelUserInfo.Content = $"Namn: {((User)normalUsersListbox.SelectedItem).Namn} \vEpost: {((User)normalUsersListbox.SelectedItem).Epost} ";
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
         {
             AdminListBox.Items.Add(normalUsersListbox.SelectedItem);
-            normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
+            //normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
         }
 
         private void AdminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
