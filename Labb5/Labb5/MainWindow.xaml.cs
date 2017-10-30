@@ -27,7 +27,8 @@ namespace Labb5
 
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
-            normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
+             if (TextBoxEpost.Text != "" && TextBoxNamn.Text != "")
+                normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
         }
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
@@ -69,7 +70,7 @@ namespace Labb5
                 buttonInfo.IsEnabled = true;
                 labelUserInfo.Content = $"Namn: {((User)AdminListBox.SelectedItem).Namn} \vEpost: {((User)AdminListBox.SelectedItem).Epost} ";
             }
-            else { labelUserInfo.Content = "Du måste skapa en ny användare eller välja en existerande"; }
+            else { labelUserInfo.Content = "Du måste skapa en \vny användare eller välja \ven existerande."; }
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
@@ -81,6 +82,10 @@ namespace Labb5
         private void AdminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void TextBoxNamn_GotFocus(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

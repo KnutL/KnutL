@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBox x:Name="TextBoxNamn" HorizontalAlignment="Left" Height="23" Margin="194,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Ange ditt namn"/>
+        <TextBox x:Name="TextBoxNamn" HorizontalAlignment="Left" Height="23" Margin="194,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Ange ditt namn" GotFocus="TextBoxNamn_GotFocus"/>
         <TextBox x:Name="TextBoxEpost" HorizontalAlignment="Left" Height="23" Margin="194,59,0,0" VerticalAlignment="Top" Width="120" ToolTip="Ange din e-postaddress"/>
         <Button x:Name="ButtonSkapa" Content="Skapa" HorizontalAlignment="Left" Margin="217,99,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSkapa_Click"/>
         <ListBox x:Name="normalUsersListbox" HorizontalAlignment="Left" Height="100" Margin="27,182,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="normalUsersListbox_SelectionChanged" FocusableChanged="normalUsersListbox_FocusableChanged"
