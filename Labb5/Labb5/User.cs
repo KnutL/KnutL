@@ -10,11 +10,11 @@ namespace Labb5
     {
         public string Namn { get; set; }
         public string Epost { get; set; }
-
-        public User(string Name, string Email)
+        
+        public User(string Namn, string Epost)
         {
-            Name = Namn;
-            Email = Epost;
+            Namn = this.Namn;
+            Epost = this.Epost;
         }
     }
 }
