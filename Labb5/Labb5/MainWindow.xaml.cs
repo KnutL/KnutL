@@ -32,8 +32,12 @@ namespace Labb5
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
         {
-
-            normalUsersListbox.SelectedItems.Remove(normalUsersListbox.SelectedItem);
+            if (normalUsersListbox.SelectedIndex >= 1)
+                normalUsersListbox.SelectedItems.Remove(normalUsersListbox.SelectedItem);
+            else if (AdminListBox.SelectedIndex >= 1)
+                AdminListBox.SelectedItems.Remove(AdminListBox.SelectedItem);
+            else
+                buttonTaBort.IsEnabled = false;
 
         }
 
@@ -65,16 +69,17 @@ namespace Labb5
 
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
-            if (normalUsersListbox.HasItems)
+            if (normalUsersListbox.SelectedIndex >= 1)
             {
                 buttonInfo.IsEnabled = true;
                 labelUserInfo.Content = $"Namn: {((User)normalUsersListbox.SelectedItem).Namn} \vEpost: {((User)normalUsersListbox.SelectedItem).Epost}";
             }
-            else if (AdminListBox.HasItems)
+            else if (AdminListBox.SelectedIndex >= 1)
             {
                 buttonInfo.IsEnabled = true;
-                labelUserInfo.Content = $"Namn: {((User)AdminListBox.SelectedItem).Namn} \vEpost: ";
+                labelUserInfo.Content = $"Namn: {((User)AdminListBox.SelectedItem).Namn} \vEpost: {((User)AdminListBox.SelectedItem).Epost} ";
             }
+            else { labelUserInfo.Content = "Du måste skapa en ny användare eller välja en existerande"; }
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
