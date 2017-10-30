@@ -69,7 +69,7 @@ namespace Labb5
                 buttonInfo.IsEnabled = true;
                 labelUserInfo.Content = $"Namn: {((User)AdminListBox.SelectedItem).Namn} \vEpost: {((User)AdminListBox.SelectedItem).Epost} ";
             }
-            else { labelUserInfo.Content = "Du måste skapa en ny användare eller välja en existerande"; }
+            else { labelUserInfo.Content = "Du måste skapa en ny \vanvändare eller välja en \vexisterande"; }
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
