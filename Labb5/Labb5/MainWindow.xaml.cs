@@ -27,9 +27,12 @@ namespace Labb5
 
         private void ButtonSkapa_Click(object sender, RoutedEventArgs e)
         {
-            normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
-            TextBoxNamn.Clear();
-            TextBoxEpost.Clear();
+            if (TextBoxNamn.Text != "" && TextBoxEpost.Text != "")
+            {
+                normalUsersListbox.Items.Add(new User(TextBoxNamn.Text, TextBoxEpost.Text));
+                TextBoxNamn.Clear();
+                TextBoxEpost.Clear();
+            }
         }
 
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
@@ -38,27 +41,33 @@ namespace Labb5
                 normalUsersListbox.Items.Remove(normalUsersListbox.Items[normalUsersListbox.SelectedIndex]);
             else if (AdminListBox.SelectedIndex >= 0)
                 AdminListBox.Items.Remove(AdminListBox.Items[AdminListBox.SelectedIndex]);
+
+            ChangeUser.IsEnabled = false;
+            ButtonChangeToAdmin.IsEnabled = false;
+            buttonTaBort.IsEnabled = false;
+            ButtonChangeToUser.IsEnabled = false;
         }
 
         private void normalUsersListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ButtonChangeToAdmin.IsEnabled = true;
-            buttonTaBort.IsEnabled = true;
+            if (normalUsersListbox.SelectedIndex >= 0)
+            {
+                ChangeUser.IsEnabled = true;
+                ButtonChangeToAdmin.IsEnabled = true;
+                buttonTaBort.IsEnabled = true;
+                ButtonChangeToUser.IsEnabled = true;
+            }
         }
 
         private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
         {
-                normalUsersListbox.Items.Add(AdminListBox.SelectedItem);
-                AdminListBox.Items.Remove(AdminListBox.SelectedItem);
-
-            
+            normalUsersListbox.Items.Add(AdminListBox.SelectedItem);
+            AdminListBox.Items.Remove(AdminListBox.SelectedItem);
+            ChangeUser.IsEnabled = false;
+            ButtonChangeToAdmin.IsEnabled = false;
+            buttonTaBort.IsEnabled = false;
+            ButtonChangeToUser.IsEnabled = false;
         }
-
-        private void normalUsersListbox_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
             if (normalUsersListbox.SelectedIndex >= 0)
@@ -71,18 +80,30 @@ namespace Labb5
                 buttonInfo.IsEnabled = true;
                 labelUserInfo.Content = $"Namn: {((User)AdminListBox.SelectedItem).Namn} \vEpost: {((User)AdminListBox.SelectedItem).Epost} ";
             }
-            else { labelUserInfo.Content = "Du måste skapa en ny \vanvändare eller välja en \vexisterande"; }
+            else {
+                labelUserInfo.Content = "Du måste skapa en ny \vanvändare eller välja en \vexisterande";
+            }
         }
 
         private void ButtonChangeToAdmin_Click_1(object sender, RoutedEventArgs e)
         {
             AdminListBox.Items.Add(normalUsersListbox.SelectedItem);
             normalUsersListbox.Items.Remove(normalUsersListbox.SelectedItem);
+            ChangeUser.IsEnabled = false;
+            ButtonChangeToAdmin.IsEnabled = false;
+            buttonTaBort.IsEnabled = false;
+            ButtonChangeToUser.IsEnabled = false;
         }
 
         private void AdminListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (AdminListBox.SelectedIndex >= 0)
+            {
+                ChangeUser.IsEnabled = true;
+                ButtonChangeToAdmin.IsEnabled = true;
+                buttonTaBort.IsEnabled = true;
+                ButtonChangeToUser.IsEnabled = true;
+            }
         }
 
         private void ChangeUser_Click(object sender, RoutedEventArgs e)
