@@ -49,17 +49,10 @@ namespace Labb5
 
         private void ButtonChangeToUser_Click(object sender, RoutedEventArgs e)
         {
-            if (normalUsersListbox.Items.Count == 0)
-            {
-                ButtonChangeToUser.IsEnabled = false;
-                buttonTaBort.IsEnabled = false;
-            }
-            else
-            {
-                ButtonChangeToUser.IsEnabled = true;
-                buttonTaBort.IsEnabled = true;
+                normalUsersListbox.Items.Add(AdminListBox.SelectedItem);
                 AdminListBox.Items.Remove(AdminListBox.SelectedItem);
-            }
+
+            
         }
 
         private void normalUsersListbox_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -69,12 +62,12 @@ namespace Labb5
 
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
-            if (normalUsersListbox.SelectedIndex >= 1)
+            if (normalUsersListbox.SelectedIndex >= 0)
             {
                 buttonInfo.IsEnabled = true;
                 labelUserInfo.Content = $"Namn: {((User)normalUsersListbox.SelectedItem).Namn} \vEpost: {((User)normalUsersListbox.SelectedItem).Epost}";
             }
-            else if (AdminListBox.SelectedIndex >= 1)
+            else if (AdminListBox.SelectedIndex >= 0)
             {
                 buttonInfo.IsEnabled = true;
                 labelUserInfo.Content = $"Namn: {((User)AdminListBox.SelectedItem).Namn} \vEpost: {((User)AdminListBox.SelectedItem).Epost} ";
