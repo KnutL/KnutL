@@ -36,10 +36,10 @@ namespace Labb5
             }
         }
 
-        //Knapp för att ta bort en cald användare
+        //Knapp för att ta bort en vald användare
         private void buttonTaBort_Click_1(object sender, RoutedEventArgs e)
         {
-            //If-sats som kollar om amn har valt en användare i listan med vanliga användare eller i Admin listan, tar sedan bort den valda användaren
+            //If-sats som kollar om man har valt en användare i listan med vanliga användare eller i Admin listan, tar sedan bort den valda användaren
             if (normalUsersListbox.SelectedIndex >= 0)
                 normalUsersListbox.Items.Remove(normalUsersListbox.Items[normalUsersListbox.SelectedIndex]);
             else if (AdminListBox.SelectedIndex >= 0)
@@ -76,7 +76,7 @@ namespace Labb5
             buttonTaBort.IsEnabled = false;
             ButtonChangeToUser.IsEnabled = false;
         }
-        //Knapp för att få information om den valda änvändaren
+        //Knapp för att få information om den valda användaren
         private void buttonInfo_Click(object sender, RoutedEventArgs e)
         {
             if (normalUsersListbox.SelectedIndex >= 0)
